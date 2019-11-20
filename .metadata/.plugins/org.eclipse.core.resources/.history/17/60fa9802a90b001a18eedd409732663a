@@ -1,0 +1,9 @@
+package com.amarsoft.springboot.controller;
+
+public class HelloController {
+     
+	 public String sayHello(){
+		 String str="hello world ,SpringBoot!";
+		 return str;
+	 }
+}

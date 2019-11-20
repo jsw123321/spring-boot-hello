@@ -1,0 +1,17 @@
+package com.amarsoft.springboot.controller;
+
+import org.springframework.web.bind.annotation.RequestMapping;
+
+public class HelloController {
+     /**
+      * 
+      *<p>Title: sayHello</p> 
+      *<p>Description: </p> 
+     　    *     @return String
+      */
+	 @RequestMapping("/sayHello")
+	 public String sayHello(){
+		 String str="hello world ,SpringBoot!";
+		 return str;
+	 }
+}

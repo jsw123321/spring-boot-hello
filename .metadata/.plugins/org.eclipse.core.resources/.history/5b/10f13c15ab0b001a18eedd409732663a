@@ -1,0 +1,19 @@
+package com.amarsoft.springboot.controller;
+
+import org.springframework.web.bind.annotation.RequestMapping;
+
+public class HelloController {
+     /**
+       * 
+       * @Title: sayHello 
+       * @Description:TODO 
+       * @date :2019年11月20日下午11:30:45
+     　      *   @param @return
+       */
+      
+	 @RequestMapping("/sayHello")
+	 public String sayHello(){
+		 String str="hello world ,SpringBoot!";
+		 return str;
+	 }
+}
