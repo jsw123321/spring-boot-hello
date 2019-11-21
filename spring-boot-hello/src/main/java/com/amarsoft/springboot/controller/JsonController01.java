@@ -8,6 +8,8 @@
 
 package com.amarsoft.springboot.controller;
 
+import java.util.Date;
+
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
@@ -27,8 +29,8 @@ import com.amarsoft.springboot.entity.Engineer;
 @Controller
 @ResponseBody
 public class JsonController01 {
-	
-    @RequestMapping("/getEngieer01")
+	//produces="application/json;charset=UTF-8"解决json格式数据返回值中文乱码
+    @RequestMapping(value="/getEngieer01",produces="application/json;charset=UTF-8")
 	public Engineer getEngieer(){//   /getEngieer01
 		Engineer engineer=new Engineer();
 		engineer.setId(1);
@@ -36,6 +38,7 @@ public class JsonController01 {
 		engineer.setSex("male");
 		engineer.setAge(100);
 		engineer.setRank("p9");
+		engineer.setCreatetime(new Date());
 		return engineer;
 	}
 }

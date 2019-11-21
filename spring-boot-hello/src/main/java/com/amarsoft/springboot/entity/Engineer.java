@@ -8,6 +8,10 @@
 
 package com.amarsoft.springboot.entity;
 
+import java.util.Date;
+
+import com.alibaba.fastjson.annotation.JSONField;
+
 /** 
  * @Title: Engineer
  * @Description: Software developer（对类进行功能描述） 
@@ -21,6 +25,41 @@ public class Engineer {
       private int age;
       private String sex;
       private String rank;
+      private Date createtime;
+	/** 
+	　 * <p>Title: </p> 
+	　 * <p>Description: </p> 
+	　 * @param id
+	　 * @param name
+	　 * @param age
+	　 * @param sex
+	　 * @param rank
+	　 * @param createtime 
+	*/
+	
+	public Engineer(int id, String name, int age, String sex, String rank, Date createtime) {
+		super();
+		this.id = id;
+		this.name = name;
+		this.age = age;
+		this.sex = sex;
+		this.rank = rank;
+		this.createtime = createtime;
+	}
+	/**
+	* @return the createtime 
+	*/
+	@JSONField(format="yyyy-MM-dd HH-mm-ss-sss")
+	public Date getCreatetime() {
+		return createtime;
+	}
+	/**
+	* @param createtime the createtime to set 
+	*/
+	
+	public void setCreatetime(Date createtime) {
+		this.createtime = createtime;
+	}
 	/** 
 	　 * <p>Title: </p> 
 	　 * <p>Description: </p> 
