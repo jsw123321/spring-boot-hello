@@ -27,13 +27,18 @@ public class HelloController {
        */
 	 @RequestMapping("/sayHello")
 	 @ResponseBody
-	 public String sayHello(){
+	 public String sayHello(){//有@ResponseBody，方法的返回值会写入HTTP response Body中
 		 String str="hello world ,SpringBoot!";
 		 return str;
 	 }
-	 
+	 /**
+	   * @Title: index 
+	   * @Description:跳转到.ftl页面(FreeMarker Template Language)
+	   * @date :2019年11月21日下午10:38:02
+	   * @return String
+	   */
 	 @RequestMapping("/index")
-	 public String index(){
+	 public String index(){//没有@ResponseBody，方法的返回值会默认解析为 跳转的路径
 		 String str="/index";
 		 return str;
 	 }
