@@ -3,6 +3,7 @@ package com.amarsoft.springboot;
 import java.util.List;
 
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.boot.autoconfigure.web.HttpMessageConverters;
 import org.springframework.boot.builder.SpringApplicationBuilder;
 import org.springframework.http.converter.HttpMessageConverter;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurerAdapter;
@@ -20,7 +21,15 @@ import com.alibaba.fastjson.support.spring.FastJsonHttpMessageConverter;
  */
 @SpringBootApplication
 public class SpringBootApp extends WebMvcConfigurerAdapter{
-    
+     /*
+      * 配置fastJson消息转化器的第一种方法就是：
+      *  （1）启动类继承extends WebMvcConfigurerAdapter
+      *  SpringBootApp extends WebMvcConfigurerAdapter
+      *  （2）覆盖方法configureMessageConverters
+      *  @Override
+	     public void configureMessageConverters...
+      *
+      */
 	@Override
 	public void configureMessageConverters(List<HttpMessageConverter<?>> converter){
 		super.configureMessageConverters(converter);
@@ -34,10 +43,31 @@ public class SpringBootApp extends WebMvcConfigurerAdapter{
 		converter.add(fastConverter);
 	}
 	
-	
+	/**
+	  * 
+	  * 配置fastJson消息转化器的第二种方法
+	  * 
+	  * 
+	  */
+//	public HttpMessageConverters fastJsonHttpMessageConverter(){
+//		//1，定义一个convert转换消息对象
+//		FastJsonHttpMessageConverter  fastConverter=new FastJsonHttpMessageConverter();
+//		//2.添加fastJson的配置信息
+//		FastJsonConfig fastJsonConfig=new FastJsonConfig();
+//		fastJsonConfig.setSerializerFeatures(SerializerFeature.PrettyFormat);
+//		//3.在converter中添加配置信息
+//		fastConverter.setFastJsonConfig(fastJsonConfig);
+//		
+//		HttpMessageConverter<?> converter=fastConverter;
+//		return new HttpMessageConverters(converter);
+//	}
 	
 	public static void main(String[] args) {
 		//SpringApplication.run(SpringBootApp.class, args);
 		new SpringApplicationBuilder(SpringBootApp.class).run(args);
 	}
+	
+	
+	
+	
 }
