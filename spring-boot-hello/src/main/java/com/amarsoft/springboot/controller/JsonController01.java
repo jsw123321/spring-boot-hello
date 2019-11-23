@@ -15,7 +15,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.amarsoft.springboot.entity.Engineer;
+import com.amarsoft.springboot.bean.Engineer;
 
 /** 
  * @Title: JsonController01
@@ -34,7 +34,7 @@ public class JsonController01 {
 	public Engineer getEngieer(){//   /getEngieer01
 		Engineer engineer=new Engineer();
 		engineer.setId(1);
-		engineer.setName("曹操");
+		engineer.setName("曹操11");
 		engineer.setSex("male");
 		engineer.setAge(100);
 		engineer.setRank("p9");

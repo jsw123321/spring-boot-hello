@@ -6,9 +6,14 @@
 　 * @version 1.0 
 */
 
-package com.amarsoft.springboot.entity;
+package com.amarsoft.springboot.bean;
 
 import java.util.Date;
+
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
 
 import com.alibaba.fastjson.annotation.JSONField;
 
@@ -19,7 +24,10 @@ import com.alibaba.fastjson.annotation.JSONField;
  * @date: 2019年11月21日下午11:02:47 （日期） 
  * @version:v.1.0
  */
+@Entity
 public class Engineer {
+	  @Id 
+	  @GeneratedValue(strategy=GenerationType.AUTO)
 	  private int id;
       private String name;
       private int age;
@@ -37,9 +45,8 @@ public class Engineer {
 	　 * @param createtime 
 	*/
 	
-	public Engineer(int id, String name, int age, String sex, String rank, Date createtime) {
+	public Engineer(String name, int age, String sex, String rank, Date createtime) {
 		super();
-		this.id = id;
 		this.name = name;
 		this.age = age;
 		this.sex = sex;

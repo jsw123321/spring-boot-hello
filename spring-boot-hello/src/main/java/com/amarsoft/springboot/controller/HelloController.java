@@ -43,7 +43,7 @@ public class HelloController {
 		 return str;
 	 }
 	 /**
-	   * @Title: index 
+	   * @Title: index1 测试热部署功能：新增加方法
 	   * @Description:跳转到.ftl页面(FreeMarker Template Language)
 	   * @date :2019年11月21日下午10:38:02
 	   * @return String
