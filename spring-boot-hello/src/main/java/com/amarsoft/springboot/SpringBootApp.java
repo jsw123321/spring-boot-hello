@@ -2,6 +2,8 @@ package com.amarsoft.springboot;
 
 import java.util.List;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.autoconfigure.web.HttpMessageConverters;
 import org.springframework.boot.builder.SpringApplicationBuilder;
@@ -11,6 +13,7 @@ import org.springframework.web.servlet.config.annotation.WebMvcConfigurerAdapter
 import com.alibaba.fastjson.serializer.SerializerFeature;
 import com.alibaba.fastjson.support.config.FastJsonConfig;
 import com.alibaba.fastjson.support.spring.FastJsonHttpMessageConverter;
+
 /**
  * 
  * @Title: SpringBootApp
@@ -63,6 +66,9 @@ public class SpringBootApp extends WebMvcConfigurerAdapter{
 //	}
 	
 	public static void main(String[] args) {
+		final Logger  logger1=LoggerFactory.getLogger(SpringBootApp.class);
+		logger1.debug("debug......");
+		logger1.info("info...........");
 		//SpringApplication.run(SpringBootApp.class, args);
 		new SpringApplicationBuilder(SpringBootApp.class).run(args);
 	}

@@ -1,5 +1,7 @@
 package com.amarsoft.springboot.controller;
 
+import java.util.Map;
+
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
@@ -52,5 +54,20 @@ public class HelloController {
 	 public String index1(){//没有@ResponseBody，方法的返回值会默认解析为 跳转的路径
 		 String str="/index";
 		 return str;
+	 }
+	 /**
+	  * 
+	   * @Title: index2 
+	   * @Description:springboot整合jsp插件
+	   * @date :2019年11月23日下午9:36:29
+	 　  * @param map
+	 　  * @return  String
+	  */
+	 @RequestMapping("/hellojsp")
+	 public String index2(Map<String,Object>  map){//没有@ResponseBody，方法的返回值会默认解析为 跳转的路径
+		 System.out.println("engineerController--Hello--------------------");
+		map.put("hello", "jsw001");
+		 // String str="/hellojsp";
+		 return "/hellojsp";
 	 }
 }
