@@ -8,6 +8,8 @@
 
 package com.amarsoft.springboot.client;
 
+import java.util.Map;
+
 import org.springframework.jms.annotation.JmsListener;
 import org.springframework.stereotype.Component;
 
@@ -23,6 +25,10 @@ public class Consumer {
      
 	@JmsListener(destination="amarsoft")
 	public void resdMessage(String text){
+		System.out.println("接收到消息："+text);
+	}
+	@JmsListener(destination="amarsoft1")
+	public void resdMapMessage(Map text){
 		System.out.println("接收到消息："+text);
 	}
 }
