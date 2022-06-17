@@ -55,7 +55,7 @@
 		<dependency>
 			<groupId>com.alibaba</groupId>
 			<artifactId>fastjson</artifactId>
-			<version>1.2.15</version>
+			<version>1.2.83</version>
 		</dependency>
 		<!-- springboot配置json格式数据返回值依赖包   end -->
 		
